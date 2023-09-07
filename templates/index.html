@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Periplus App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <section class="hero is-danger">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          <a href="https://www.periplus.com/">Periplus Bookstore</a> 
+        </h1>
+      </div>
+    </div>
+  </section>
+  <body>
+  {% for data in datas %}  
+  <section class="section">
+    <div class="container">
+        <div class="content is-medium">
+            <img src="{{data.Image|safe}}" width="200" height="200">
+            <h1>
+                <a href="{{data.Url|safe}}">{{ data.Title }}</a>
+            </h1>
+            <h4>{{ data.Price }}</h4>
+            <p>{{data.Author}}</p>
+        </div>
+    </div>
+  </section>
+  {% endfor %}
+  </body>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Simple Website</strong> by I Gede Dhani Pradipta Putra
+      </p>
+    </div>
+  </footer>
+</html>
